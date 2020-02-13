@@ -6,12 +6,11 @@ def draw_lines( matrix, screen, color ):
     pass
 
 def add_edge( matrix, x0, y0, z0, x1, y1, z1 ):
-    pass
+    matrix.add_point(x0,y0,z0)
+    matrix.add_point(x1,y1,z1)
 
 def add_point( matrix, x, y, z=0 ):
-    pass
-
-
+    matrix.append([x,y,z,1])
 
 
 def draw_line( x0, y0, x1, y1, screen, color ):
@@ -34,7 +33,7 @@ def draw_line( x0, y0, x1, y1, screen, color ):
     if ( abs(x1-x0) >= abs(y1 - y0) ):
 
         #octant 1
-        if A > 0:            
+        if A > 0:
             d = A + B/2
 
             while x < x1:
@@ -97,3 +96,14 @@ def draw_line( x0, y0, x1, y1, screen, color ):
         #end octant 7
     #end octants 2 and 7
 #end draw_line
+
+if __name__ == "__main__":
+    m1 = [[1,2,3,1],[4,5,6,1],[7,8,9,1],[10,11,12,1]]
+    m2 = [[1,2,3,1],[4,5,6,1]]
+    matrix_mult(m1,m2)
+    print_matrix(m2)
+    ident(m1)
+    matrix_mult(m1,m2)
+    print_matrix(m2)
+    add_point(m2,1,2,3)
+    add_point(m2,3,4,5)
