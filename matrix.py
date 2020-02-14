@@ -28,7 +28,7 @@ def ident( matrix ):
             matrix[r][c] = 1 if r == c else 0
 
 #multiply m1 by m2, modifying m2 to be the product
-# 4x4 by 4xn
+#multiplying a 4x4 by 4xn matrix
 #m1 * m2 -> m2
 def matrix_mult( m1, m2 ):
     for point in m2:
