@@ -24,3 +24,5 @@ for point in matrix:
 draw_lines( matrix, screen, color )
 
 display(screen)
+
+#test stuff
